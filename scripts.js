@@ -1,0 +1,1 @@
+document.querySelector("#caja").innerHTML="Parrafo desde JS"

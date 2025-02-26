@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+    <style>
+        .card-container {
+            display: flex;
+            justify-content: space-between; /* Esto separa las cartas */
+        }
+
+        .card {
+            flex: 1; /* Esto hace que las cartas ocupen el mismo espacio */
+            margin: 10px; /* Añade un margen entre las cartas */
+            border: 1px solid #ccc; /* Añade un borde para mejor visualización */
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* Añade una sombra */
+            transition: 0.3s;
+            cursor: pointer; /* Cambia el cursor a una mano para indicar que es clickeable */
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        }
+
+        .container {
+            padding: 2px 16px;
+        }
+
+        .footer {
+            background-color: #f1f1f1;
+            padding: 10px;
+            text-align: center;
+            transition: background-color 0.3s; /* Transición suave para el cambio de color */
+        }
+    </style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semana5</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/logo2.png">
+</head>
+
+<body>
+    <nav class="navbar">
+        <img src="https://ugb.edu.sv/wp-content/uploads/2024/10/UGB_LOGO_AZUL.png" width="15%" height="25%">
+        <h2>Universidad Gerardo Barrios</h2>
+        <p class="center">Carrera: Ingeneria en Sistemas
+            <br>
+            Codigo de Estudiante: SMSS089023, SMSS068623
+        </p>
+    </nav>
+    <div class="card-container">
+        <div class="card" onclick="mostrarMensaje('mosquito')">
+          <img src="https://www.cdc.gov/mosquitoes/media/images/Anopheles-freeborni-resting-female-16-9.jpg" alt="Avatar" style="width: 100%;">
+          <div class="container">
+            <h4><b>mosquito</b></h4> 
+            <p>El dengue es causado por la picadura de mosquitos infectados con el virus del dengue.</p> 
+          </div>
+        </div>
+      
+        <div class="card" onclick="mostrarMensaje('zancudo')">
+          <img src="https://rea.ceibal.edu.uy/elp/combatiendo-el-dengue/picadura.png" alt="Avatar" style="width:100%">
+          <div class="container">
+            <h4><b>zancudo</b></h4> 
+            <p>El mosquito más común que transmite el dengue es el Aedes aegypti.</p> 
+          </div>
+        </div>
+    </div>
+
+    <footer class="footer" onmouseover="cambiarColorFooter()" onmouseout="restaurarColorFooter()">
+        <p>&copy; Alumno Flavid Elias Reyes Paz, cristian ernesto valle flores
+            <br>
+            Examen Parcial - Primer Computo
+        </p>
+    </footer>
+
+    <script>
+        // Función para mostrar un mensaje cuando se hace clic en una tarjeta
+        function mostrarMensaje(tipo) {
+            alert(`Has hecho clic en la tarjeta del ${tipo}.`);
+        }
+
+        // Función para cambiar el color de fondo del footer cuando se pasa el mouse sobre él
+        function cambiarColorFooter() {
+            document.querySelector('.footer').style.backgroundColor = '#ccc';
+        }
+
+        // Función para restaurar el color de fondo del footer cuando se quita el mouse
+        function restaurarColorFooter() {
+            document.querySelector('.footer').style.backgroundColor = '#f1f1f1';
+        }
+    </script>
+
+</body>
+
+</html>
